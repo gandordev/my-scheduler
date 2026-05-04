@@ -39,6 +39,11 @@ jobs:
           };
           EOF
 
+      # Fuerza que upload-pages-artifact incluya js/env.js
+      # aunque coincida con algún patrón de .gitignore
+      - name: Incluir js/env.js en el artefacto
+        run: git add -f js/env.js
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
